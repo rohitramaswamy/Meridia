@@ -1,48 +1,54 @@
-# Meridia - Travel Social Media App
+# 🌍 Meridia - Travel Social Media App
 
-Meridia is a travel social media platform that allows users to share their trips and experiences through a multi-sectional mobile app. Users can discover new destinations, plan trips, and connect with fellow travelers.
+> **A modern travel social media platform that allows users to share their trips and experiences through an intuitive multi-sectional mobile app.**
 
-## Features
+Meridia connects travelers worldwide, enabling them to discover new destinations, plan trips, and share experiences with a community of fellow adventurers.
 
-### 📱 App Pages
+## ✨ Features
 
-1. **Inspire Me** - TikTok-style feed with "For You" and "Following" tabs
-2. **Curate** - Personalized recommendations with budget and distance filters
-3. **My Trips** - Trip planning and management hub
-4. **Map** - Local experiences and attractions discovery
-5. **Profile** - User profile and trip showcase
+### 📱 Core App Screens
 
-## Tech Stack
+| Screen | Description | Key Features |
+|--------|-------------|--------------|
+| 🌟 **Inspire Me** | TikTok-style vertical feed | • "For You" algorithm-driven content<br>• "Following" feed from users you follow<br>• Swipeable travel posts and experiences |
+| 🎯 **Curate** | Personalized recommendations | • AI-powered content curation<br>• Budget and distance filters<br>• Tailored to your travel preferences |
+| ✈️ **My Trips** | Trip planning hub | • Plan and organize upcoming trips<br>• Track past adventures<br>• Add activities and itineraries |
+| 🗺️ **Map** | Local discovery | • Find nearby experiences and attractions<br>• Google Maps integration<br>• Location-based recommendations |
+| 👤 **Profile** | Personal showcase | • Display your travel portfolio<br>• Social features (followers/following)<br>• Trip statistics and achievements |
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- **React Native** with Expo
-- **React Navigation** for navigation
-- **React Native Maps** for map functionality
-- **Expo Location** for location services
+- **React Native** with Expo for cross-platform mobile development
+- **React Navigation** for seamless screen transitions
+- **React Native Maps** for interactive map functionality
+- **Expo Location** for geolocation services
+- **React Native Reanimated** for smooth animations
 
 ### Backend
-- **Node.js** with Express.js
-- **PostgreSQL** database
-- **JWT** authentication
-- **bcryptjs** for password hashing
+- **Node.js** with Express.js for robust API development
+- **PostgreSQL** for reliable data storage
+- **JWT** for secure authentication
+- **bcryptjs** for password encryption
+- **Helmet** and rate limiting for security
 
-## Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- PostgreSQL (v12 or higher)
-- Expo CLI (`npm install -g @expo/cli`)
-- Git
+- **Node.js** (v16 or higher)
+- **PostgreSQL** (v12 or higher)
+- **Expo CLI** (`npm install -g @expo/cli`)
+- **Git**
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/meridia-travel-app.git
-   cd meridia-travel-app
+   git clone https://github.com/Sbp826/Meridia.git
+   cd Meridia
    ```
 
-2. **Install dependencies**
+2. **Install all dependencies**
    ```bash
    npm run install-all
    ```
@@ -51,8 +57,8 @@ Meridia is a travel social media platform that allows users to share their trips
    ```bash
    # Create PostgreSQL database
    createdb meridia_db
-   
-   # Run the schema
+
+   # Run the schema to create tables
    psql meridia_db < backend/database/schema.sql
    ```
 
@@ -60,18 +66,69 @@ Meridia is a travel social media platform that allows users to share their trips
    ```bash
    # Copy the example environment file
    cp backend/.env.example backend/.env
-   
-   # Edit backend/.env with your database credentials and other settings
+
+   # Edit backend/.env with your credentials:
+   # - Database connection details
+   # - JWT secret key
+   # - Google Maps API key
    ```
 
-5. **Start the development servers**
+5. **Start development servers**
    ```bash
-   # Start both frontend and backend
+   # Start both frontend and backend simultaneously
    npm run dev
-   
+
    # Or start them separately:
-   # Backend: npm run backend
-   # Frontend: npm start
+   npm run backend  # Backend only
+   npm start        # Frontend only
+   ```
+
+## 🎯 Current Development Status
+
+### ✅ Completed
+- **Complete app structure** with 5 main screens
+- **Backend API** with all essential endpoints
+- **Database schema** with optimized relationships
+- **Authentication system** with JWT and secure password hashing
+- **Navigation system** with bottom tab navigation
+- **Development environment** fully configured
+- **Google Maps integration** prepared
+- **Security middleware** implemented
+
+### 🚧 In Progress
+- **UI/UX customization** based on design requirements
+- **Screen-specific functionality** implementation
+- **API integration** with frontend components
+
+### 📋 Next Steps
+1. **Upload design screenshots** for each screen
+2. **Customize UI components** to match design vision
+3. **Implement screen-specific features**
+4. **Add real-time functionality**
+5. **Testing and optimization**
+
+## 🔧 Development Environment
+### 🔍 Verify Installation
+
+After setup, verify everything is working:
+
+1. **Backend Health Check**
+   ```bash
+   curl http://localhost:3000/health
+   # Should return: {"status":"OK","message":"Meridia API is running"}
+   ```
+
+2. **Frontend Launch**
+   ```bash
+   npm start
+   # Should open Expo DevTools and show QR code for mobile testing
+   ```
+
+3. **Database Connection**
+   ```bash
+   # Check if tables were created successfully
+   psql meridia_db -c "\dt"
+   # Should list all created tables
    ```
 
 ### Environment Variables
