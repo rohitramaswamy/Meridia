@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #2a2a2a;
+            color: white;
+        }
+        .form-container {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #666;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        button {
+            background: #8b5c67;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #9a6576;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Test Form for Formspree</h1>
+        <p>This is a simple test form to verify Formspree is working.</p>
+        
+        <form action="https://formspree.io/f/mpwlzvwa" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Submit Test</button>
+        </form>
+        
+        <p><small>After submitting, you should be redirected to Formspree's success page.</small></p>
+    </div>
+</body>
+</html> 
