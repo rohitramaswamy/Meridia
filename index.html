@@ -13,6 +13,28 @@ console.log('Simple form handler loaded');
 // Test if JavaScript is running at all
 alert('JavaScript is running! Click OK to continue.');
 
+// Test form elements
+setTimeout(function() {
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    console.log('🔍 Form elements found:');
+    console.log('Name input:', nameInput);
+    console.log('Email input:', emailInput);
+    console.log('Submit button:', submitBtn);
+    
+    if (submitBtn) {
+        console.log('✅ Submit button found, adding click listener...');
+        submitBtn.addEventListener('click', function() {
+            alert('Submit button clicked!');
+        });
+        console.log('✅ Click listener added');
+    } else {
+        console.log('❌ Submit button not found');
+    }
+}, 1000);
+
 function showMessage(element) {
     // Hide all messages first
     const successMessage = document.getElementById('successMessage');
