@@ -9,17 +9,33 @@ function initializeForm() {
     const submitBtn = document.getElementById('submitBtn');
     console.log('Looking for submit button... Found: ' + (submitBtn ? 'YES' : 'NO'));
     
-    if (submitBtn) {
-        console.log('✅ Submit button found, adding click listener...');
-        submitBtn.addEventListener('click', function() {
-            alert('Submit button clicked!');
-            submitBtn.style.background = 'red';
-            submitBtn.textContent = 'BUTTON CLICKED!';
-        });
-        console.log('✅ Click listener added successfully');
-    } else {
-        console.log('❌ Submit button not found');
-    }
+            if (submitBtn) {
+            console.log('✅ Submit button found, adding click listener...');
+            
+            // Add multiple event listeners to test
+            submitBtn.addEventListener('click', function(e) {
+                console.log('🎯 CLICK EVENT FIRED!');
+                alert('Submit button clicked!');
+                submitBtn.style.background = 'red';
+                submitBtn.textContent = 'BUTTON CLICKED!';
+            });
+            
+            // Also try mousedown event
+            submitBtn.addEventListener('mousedown', function(e) {
+                console.log('🖱️ MOUSEDOWN EVENT FIRED!');
+                submitBtn.style.background = 'purple';
+            });
+            
+            // Also try mouseup event
+            submitBtn.addEventListener('mouseup', function(e) {
+                console.log('🖱️ MOUSEUP EVENT FIRED!');
+                submitBtn.style.background = 'orange';
+            });
+            
+            console.log('✅ All event listeners added successfully');
+        } else {
+            console.log('❌ Submit button not found');
+        }
 }
 
 // Run when DOM is ready
