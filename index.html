@@ -13,30 +13,37 @@ console.log('Simple form handler loaded');
 // Test if JavaScript is running at all
 alert('JavaScript is running! Click OK to continue.');
 
-// Test form elements
+// Test form elements immediately
+const submitBtn = document.getElementById('submitBtn');
+alert('Looking for submit button... Found: ' + (submitBtn ? 'YES' : 'NO'));
+
+if (submitBtn) {
+    alert('Adding click listener to submit button');
+    submitBtn.addEventListener('click', function() {
+        alert('Submit button clicked!');
+        // Also change button color to prove it's working
+        submitBtn.style.background = 'red';
+        submitBtn.textContent = 'BUTTON CLICKED!';
+    });
+    alert('Click listener added successfully');
+} else {
+    alert('Submit button NOT found!');
+}
+
+// Also try with a delay
 setTimeout(function() {
-    const nameInput = document.getElementById('nameInput');
-    const emailInput = document.getElementById('emailInput');
-    const submitBtn = document.getElementById('submitBtn');
+    const submitBtn2 = document.getElementById('submitBtn');
+    alert('After delay - Submit button found: ' + (submitBtn2 ? 'YES' : 'NO'));
     
-    console.log('🔍 Form elements found:');
-    console.log('Name input:', nameInput);
-    console.log('Email input:', emailInput);
-    console.log('Submit button:', submitBtn);
-    
-            if (submitBtn) {
-            console.log('✅ Submit button found, adding click listener...');
-            submitBtn.addEventListener('click', function() {
-                alert('Submit button clicked!');
-                // Also change button color to prove it's working
-                submitBtn.style.background = 'red';
-                submitBtn.textContent = 'BUTTON CLICKED!';
-            });
-            console.log('✅ Click listener added');
-        } else {
-            console.log('❌ Submit button not found');
-        }
-}, 1000);
+    if (submitBtn2) {
+        submitBtn2.addEventListener('click', function() {
+            alert('Submit button clicked (delayed)!');
+            submitBtn2.style.background = 'blue';
+            submitBtn2.textContent = 'DELAYED CLICK!';
+        });
+        alert('Delayed click listener added');
+    }
+}, 2000);
 
 function showMessage(element) {
     // Hide all messages first
