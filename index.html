@@ -24,15 +24,18 @@ setTimeout(function() {
     console.log('Email input:', emailInput);
     console.log('Submit button:', submitBtn);
     
-    if (submitBtn) {
-        console.log('✅ Submit button found, adding click listener...');
-        submitBtn.addEventListener('click', function() {
-            alert('Submit button clicked!');
-        });
-        console.log('✅ Click listener added');
-    } else {
-        console.log('❌ Submit button not found');
-    }
+            if (submitBtn) {
+            console.log('✅ Submit button found, adding click listener...');
+            submitBtn.addEventListener('click', function() {
+                alert('Submit button clicked!');
+                // Also change button color to prove it's working
+                submitBtn.style.background = 'red';
+                submitBtn.textContent = 'BUTTON CLICKED!';
+            });
+            console.log('✅ Click listener added');
+        } else {
+            console.log('❌ Submit button not found');
+        }
 }, 1000);
 
 function showMessage(element) {
